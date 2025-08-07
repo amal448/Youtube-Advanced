@@ -40,7 +40,7 @@ const SideBar = () => {
 
   return (
     <div  ref={containerRef}
-      className={`w-60 p-3 shrink-0 bg-white shadow-lg z-[99] overflow-y-auto h-full
+      className={`w-60 p-3 shrink-0 bg-white shadow-lg z-[99] overflow-y-auto h-screen
         ${triggered ? 'fixed top-0 left-0' : 'relative'}`}
     >
      {
@@ -63,23 +63,23 @@ const SideBar = () => {
         </Link>
         <li className='min-h-12 flex px-3 items-center rounded-xl'>
           <IoMdHome className='mr-6' size={24} />
-          <span>Home</span>
+          <span>Shorts</span>
         </li>
         <li className='min-h-12 flex px-3 items-center rounded-xl'>
           <IoMdHome className='mr-6' size={24} />
-          <span>Home</span>
+          <span>Subscription</span>
         </li>
       </ul>
       <hr />
-      <h6 className='min-h-12 flex px-3 font-medium items-center rounded-xl text-2xl'>You</h6>
-      <ul>
+      {/* <h6 className='min-h-12 flex px-3 font-medium items-center rounded-xl text-2xl'>You</h6> */}
+      {/* <ul>
         {[...Array(5)].map((_, i) => (
           <li key={i} className='min-h-12 flex px-3 items-center rounded-xl'>
             <IoMdHome className='mr-6' size={24} />
-            <span>Home</span>
+            <span>History</span>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }

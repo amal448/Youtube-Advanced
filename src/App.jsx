@@ -1,9 +1,9 @@
 import React from 'react'
-import Head from './components/Head'
 import Body from './components/Body'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainContainer from './components/MainContainer'
 import WatchPage from './components/WatchPage'
+import Searched from './components/Searched'
 
 const appRouter=createBrowserRouter([
   {
@@ -18,6 +18,10 @@ const appRouter=createBrowserRouter([
         path:'watch',
         element:<WatchPage/>
       },
+      {
+        path:'results',
+        element:<Searched/>
+      },
     ]
   }
 ])
@@ -29,7 +33,7 @@ function App() {
 
   return (
     <>
-    <Head />
+  
     <RouterProvider router={appRouter} />
     </>
   )

@@ -3,13 +3,17 @@ import { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cacheResults } from '../redux/searchSlice';
 import { addSelect } from '../redux/mapSlice';
+import { useNavigate,useSearchParams } from 'react-router-dom';
+
 const useSearch = () => {
 
     const [querysearch, setQuerySearch] = useState([])
     const [search, setSearch] = useState("")
     const [show,setShow]=useState(false)
-
     const searchCache=useSelector(state=>state.search)
+    
+    const navigate=useNavigate();
+
     const dispatch=useDispatch()
 
     useEffect(() => {
@@ -42,7 +46,7 @@ const useSearch = () => {
           dispatch(addSelect(json.items))
           console.log("list",json);
           setShow(false)
-          
+          navigate(`/results?search_query=${search}`)
         }
 
   return {setSearch,search,querysearch,handleSubmit,show}

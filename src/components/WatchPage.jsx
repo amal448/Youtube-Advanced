@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 import { useSearchParams } from "react-router";
 import { handleSidebar } from '../redux/appSlice';
 import { useSelector } from 'react-redux';
+import CommentsContainer from './CommentsContainer';
+
 const WatchPage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -30,6 +32,9 @@ const WatchPage = () => {
 
     <div className='pt-6 pr-6 ml-6 flex-1' >
         <iframe className='rounded-md' width="900" height="390" src={`https://www.youtube.com/embed/${id}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+   
+        <CommentsContainer />
+   
     </div>
     <div className='w-full pt-6 pr-6 '>
        <div className='w-full h-full bg-green-300'>
